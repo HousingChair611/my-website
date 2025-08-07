@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Character Model Progress</title>
+  <link rel="stylesheet" href="../main.css">
+  <link rel="icon" href="C:\Users\a.m.findlay\OneDrive - Saint Kentigern\Desktop\Digital Technology\Year 11\Assessments\92005 assessment - Andrew Findlay\3D Game Website\Images\logo.png">
+  <!-- Internal CSS -->
+  <style>
+    .toggler { 
+      cursor: pointer; 
+      transition: all 0.3s ease;
+    }
+    .toggler:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px #00e6d0aa;
+    }
+    .toggle-content { 
+      display: none; 
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #0f7cff33;
+    }
+    .toggler.active .toggle-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <button id="openNavbarBtn" class="open-navbar-btn">☰</button>
+  <nav id="navbar" class="navbar">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="character.html">Character Model</a></li>
+      <li><a href="../enemy/enemy.html">Enemy Model</a></li>
+    </ul>
+  </nav>
+
+ <!-- Header -->
+  <header class="site-header">
+    <h1 id="title">Character Design Process</h1>
+  </header>
+
+  <!-- Main -->
+  <main id="work_process" class="flex-container wrap">
+    <div class="process-step toggler">
+      <h2>Initial Concept</h2>
+      <img src="C:\Users\a.m.findlay\OneDrive - Saint Kentigern\Desktop\Digital Technology\Year 11\Assessments\92005 assessment - Andrew Findlay\3D Game Website\Character\Images\character_initial.png" alt="Low‑poly player block‑out">
+      <p>Rough shape inspired by fast‑action protagonists.</p>
+    </div>
+
+    <div class="process-step toggler">
+      <h2>Refined Concept</h2>
+      <p>Click to see more.</p>
+      <img src="C:\Users\a.m.findlay\OneDrive - Saint Kentigern\Desktop\Digital Technology\Year 11\Assessments\92005 assessment - Andrew Findlay\3D Game Website\Character\Images\character_refined_1.png" alt="Detailed model front">
+      <p>Front of model</p>
+      <div class="toggle-content">
+        <img src="C:\Users\a.m.findlay\OneDrive - Saint Kentigern\Desktop\Digital Technology\Year 11\Assessments\92005 assessment - Andrew Findlay\3D Game Website\Character\Images\character_refined_2.png" alt="Detailed model back">
+        <p>Back of model</p>
+        <p>Add detail to features including wires and plating.</p>
+      </div>
+    </div>
+
+    <div class="process-step toggler">
+      <h2>More Detail</h2>
+      <p>Click to see more.</p>
+      <img src="C:\Users\a.m.findlay\OneDrive - Saint Kentigern\Desktop\Digital Technology\Year 11\Assessments\92005 assessment - Andrew Findlay\3D Game Website\Character\Images\character_more_detail_1.png" alt="Close up detail">
+      <p>Upper arm of character.</p>
+      <div class="toggle-content">
+        <img src="C:\Users\a.m.findlay\OneDrive - Saint Kentigern\Desktop\Digital Technology\Year 11\Assessments\92005 assessment - Andrew Findlay\3D Game Website\Character\Images\character_more_detail_2.png" alt="Close up detail">
+        <p>Torso and completed arms.</p>
+        <img src="C:\Users\a.m.findlay\OneDrive - Saint Kentigern\Desktop\Digital Technology\Year 11\Assessments\92005 assessment - Andrew Findlay\3D Game Website\Character\Images\character_more_detail_3.png" alt="Close up detail">
+        <p>Upper legs and hand.</p>
+        <img src="C:\Users\a.m.findlay\OneDrive - Saint Kentigern\Desktop\Digital Technology\Year 11\Assessments\92005 assessment - Andrew Findlay\3D Game Website\Character\Images\character_more_detail_4.png" alt="Close up detail">
+        <p>Lower legs of character.</p>
+        <img src="C:\Users\a.m.findlay\OneDrive - Saint Kentigern\Desktop\Digital Technology\Year 11\Assessments\92005 assessment - Andrew Findlay\3D Game Website\Character\Images\character_more_detail_5.png" alt="Close up detail">
+        <p>Wheel feet.</p>
+      </div>
+    </div>
+
+    <div class="process-step toggler">
+      <h2>Colour</h2>
+      <img src="#" alt="Character rig pose">
+      <p>Skeleton rig, skin weights, basic idle cycle.</p>
+    </div>
+  </main>
+
+  <!-- Internal JS -->
+  <script src="../navbar.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const togglers = document.querySelectorAll('.toggler');
+      
+      togglers.forEach(function(toggler) {
+        toggler.addEventListener('click', function() {
+          this.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enemy Model Progress</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="C:\Users\a.m.findlay\OneDrive - Saint Kentigern\Desktop\Digital Technology\Year 11\Assessments\92005 assessment - Andrew Findlay\3D Game Website\Images\logo+color.png">
+  <!-- Internal CSS -->
+  <style>
+    .toggler { 
+      cursor: pointer; 
+      transition: all 0.3s ease;
+    }
+    .toggler:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px #00e6d0aa;
+    }
+    .toggle-content { 
+      display: none; 
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #0f7cff33;
+    }
+    .toggler.active .toggle-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <button id="openNavbarBtn" class="open-navbar-btn">☰</button>
+  <nav id="navbar" class="navbar">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../character/character.html">Character Model</a></li>
+      <li><a href="enemy.html">Enemy Model</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="site-header">
+    <h1 id="title">Enemy Design Process</h1>
+  </header>
+
+  <!-- Main -->
+  <main id="work_process" class="flex-container wrap">
+    <div class="process-step toggler">
+      <h2>Initial Concept</h2>
+      <p>Click to see more.</p>
+      <img src="C:\Users\a.m.findlay\OneDrive - Saint Kentigern\Desktop\Digital Technology\Year 11\Assessments\92005 assessment - Andrew Findlay\3D Game Website\Enemy\Images\enemy_initial_1.jpg" alt="Drawn concept for the enemy">
+      <p>Rough sketch by Lucas, outlining shape and silhouette.</p>
+      <div class="toggle-content">
+        <img src="C:\Users\a.m.findlay\OneDrive - Saint Kentigern\Desktop\Digital Technology\Year 11\Assessments\92005 assessment - Andrew Findlay\3D Game Website\Enemy\Images\enemy_initial_2.jpg" alt="Initial low‑poly model">
+        <p>First simple 3D model to allow for easy adjustments in the future.</p>
+      </div>
+    </div>
+
+    <div class="process-step toggler">
+      <h2>Refined Concept</h2>
+      <img src="C:\Users\a.m.findlay\OneDrive - Saint Kentigern\Desktop\Digital Technology\Year 11\Assessments\92005 assessment - Andrew Findlay\3D Game Website\Enemy\Images\enemy_concept_1.jpg" alt="Blender sculpt with vines">
+      <p>Added basic vine details and wear patterns.</p>
+    </div>
+
+    <div class="process-step toggler">
+      <h2>More Detail</h2>
+      <img src="C:\Users\a.m.findlay\OneDrive - Saint Kentigern\Desktop\Digital Technology\Year 11\Assessments\92005 assessment - Andrew Findlay\3D Game Website\Enemy\Images\enemy_colour_1.png" alt="Textured model preview">
+      <p>Base colours, highlights, and texture maps applied with particles used to add leaves for more detail.</p>
+    </div>
+
+    <div class="process-step toggler">
+      <h2>Animation</h2>
+      <img src="#" alt="Idle animation preview">
+      <p>Idle, walk, attack cycles in progress.</p>
+    </div>
+  </main>
+
+  <!-- Internal JS -->
+  <script src="../navbar.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const togglers = document.querySelectorAll('.toggler');
+      
+      togglers.forEach(function(toggler) {
+        toggler.addEventListener('click', function() {
+          this.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
