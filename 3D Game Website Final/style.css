@@ -1,0 +1,207 @@
+/* ===== GLOBAL STYLES ===== */
+/* Reset & box‑sizing to ensures consistent spacing and sizing across browsers */
+* {
+  margin: 0;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+/* ===== BODY STYLES ===== */
+/* Main body styling with gradient background and typography */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a2233 0%, #232946 100%);
+  color: #eaf6fb;
+  line-height: 1.6;
+  padding-top: 60px; /* Space for fixed navbar */
+  min-height: 100vh;
+}
+
+/* ===== NAVIGATION STYLES ===== */
+/* Hamburger menu button for opening the sidebar */
+.open-navbar-btn {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, #0f7cff 0%, #00e6d0 100%);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  z-index: 1001; /* Higher than navbar */
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: left 0.3s, 0.2s, box-shadow 0.2s;
+}
+
+/* Hover effect for hamburger button */
+.open-navbar-btn:hover {
+  background: linear-gradient(90deg, #00e6d0 0%, #0f7cff 100%);
+  box-shadow: 0 4px 16px #00e6d0aa;
+}
+
+/* Move button with sidebar when navbar is active */
+.navbar.active ~ .open-navbar-btn,  
+.open-navbar-btn.navbar-open {
+  left: 260px;
+}
+
+/* Side navigation bar styling */
+.navbar {
+  position: fixed;
+  top: 0; 
+  left: -260px; /* Hidden by default */
+  width: 260px; 
+  height: 100%;
+  background: #181f2a;
+  color: #fff;
+  padding: 40px 20px;
+  transition: left 0.3s; /* Smooth slide animation */
+  z-index: 1000;
+  box-shadow: 2px 0 16px #0f7cff33;
+}
+
+/* Show navbar when active class is applied */
+.navbar.active { 
+  left: 0; 
+}
+
+/* Remove default list styling */
+.navbar ul { 
+  list-style: none; 
+}
+
+/* Spacing between navigation items */
+.navbar li { 
+  margin: 20px 0; 
+}
+
+/* Navigation link styling */
+.navbar a {
+  color: #eaf6fb;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+/* Hover effect for navigation links */
+.navbar a:hover {
+  background: #0f7cff;
+  color: #fff;
+  box-shadow: 0 0 8px #00e6d0, 0 0 2px #0f7cff;
+  text-decoration: none;
+}
+
+/* ===== HEADER STYLES ===== */
+/* Site header with gradient background */
+.site-header {
+  text-align: center;
+  padding: 32px 20px 20px 20px;
+  background: linear-gradient(90deg, #232946 60%, #0f7cff 100%);
+  color: #eaf6fb;
+  box-shadow: 0 2px 16px #0f7cff22;
+}
+
+/* Main title styling */
+.site-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px #0f7cff55;
+}
+
+/* Hero image styling */
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px #0f7cff33;
+}
+
+/* ===== LAYOUT STYLES ===== */
+/* Flexbox container for main content layout */
+.flex-container {
+  display: flex;
+  gap: 24px;
+  padding: 32px 20px;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: center;
+}
+
+/* Individual flex items (sections) */
+.flex-item {
+  flex: 1 1 320px; /* Grow, shrink, and base width */
+  background: linear-gradient(135deg, #232946 60%, #1a2233 100%);
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px #0f7cff22;
+  color: #eaf6fb;
+  border: 1.5px solid #0f7cff33;
+  transition: box-shadow 0.2s, border 0.2s;
+}
+
+/* Hover effect for flex items */
+.flex-item:hover {
+  box-shadow: 0 8px 32px #00e6d0aa;
+  border: 1.5px solid #00e6d0;
+}
+
+/* Process step cards for model progression pages */
+.process-step {
+  flex: 1 1 280px;
+  background: linear-gradient(135deg, #232946 60%, #1a2233 100%);
+  padding: 18px;
+  border: 2px solid #0f7cff33;
+  border-radius: 10px;
+  text-align: center;
+  color: #eaf6fb;
+  box-shadow: 0 2px 12px #0f7cff22;
+  transition: box-shadow 0.2s, border 0.2s;
+}
+
+/* Hover effect for process steps */
+.process-step:hover {
+  box-shadow: 0 8px 32px #00e6d0aa;
+  border: 2px solid #00e6d0;
+}
+
+/* Image styling within process steps */
+.process-step img {
+  width: 100%;
+  height: auto;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px #0f7cff33;
+}
+
+/* ===== INTERACTIVE EFFECTS ===== */
+/* Hover effects for images */
+img:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 4px 24px #00e6d0cc;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* ===== TYPOGRAPHY STYLES ===== */
+/* Heading styles with accent color */
+h2, h3, h4 {
+  color: #00e6d0;
+  text-shadow: 0 1px 4px #0f7cff44;
+}
+
+/* Link styling */
+a {
+  color: #0f7cff;
+  transition: color 0.2s;
+}
+
+/* Hover effect for links */
+a:hover {
+  color: #00e6d0;
+}

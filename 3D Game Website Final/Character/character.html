@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for proper character encoding and responsive viewport -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Character Model Progress</title>
+  <!-- External CSS file for main styling -->
+  <link rel="stylesheet" href="../style.css">
+  <!-- Favicon for browser tab -->
+  <link rel="icon" href="../Images/logo+color.png">
+  
+  <!-- Internal CSS styles for expandable content sections -->
+  <style>
+    /* Clickable container expands to show more content */
+    .toggler { 
+      cursor: pointer; 
+      transition: all 0.3s ease;
+    }
+    
+    /* Hover effect for toggleable sections */
+    .toggler:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px #00e6d0aa;
+    }
+    
+    /* Hidden content container revealed when toggled */
+    .toggle-content { 
+      display: none; 
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #0f7cff33;
+    }
+    
+    /* Show toggle content when parent has active class */
+    .toggler.active .toggle-content {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Section -->
+  <!-- Hamburger menu button for mobile navigation -->
+  <button id="openNavbarBtn" class="open-navbar-btn">☰</button>
+  <!-- Side navigation bar -->
+  <nav id="navbar" class="navbar">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="character.html">Character Model</a></li>
+      <li><a href="../enemy/enemy.html">Enemy Model</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Header Section -->
+  <header class="site-header">
+    <h1 id="title">Character Design Process</h1>
+  </header>
+
+  <!-- Main Content Section -->
+  <main id="work_process" class="flex-container wrap">
+    <!-- Initial Concept Section -->
+    <div class="process-step toggler">
+      <h2>Initial Concept</h2>
+      <img src="Images/character_initial.png" alt="Low-poly player block-out">
+      <p>Rough shape inspired by fast-action protagonists.</p>
+    </div>
+
+    <!-- Refined Concept Section -->
+    <div class="process-step toggler">
+      <h2>Refined Concept</h2>
+      <p>Click to see more.</p>
+      <img src="Images/character_refined_1.png" alt="Detailed model front">
+      <p>Front of model</p>
+      <!-- Expandable content for additional views -->
+      <div class="toggle-content">
+        <img src="Images/character_refined_2.png" alt="Detailed model back">
+        <p>Back of model</p>
+        <p>Add detail to features including wires and plating.</p>
+      </div>
+    </div>
+
+    <!-- More Detail Section -->
+    <div class="process-step toggler">
+      <h2>More Detail</h2>
+      <p>Click to see more.</p>
+      <img src="Images/character_more_detail_1.png" alt="Close up detail">
+      <p>Upper arm of character.</p>
+      <!-- Expandable content showing detailed views of different body parts -->
+      <div class="toggle-content">
+        <img src="Images/character_more_detail_2.png" alt="Close up detail">
+        <p>Torso and completed arms.</p>
+        <img src="Images/character_more_detail_3.png" alt="Close up detail">
+        <p>Upper legs and hand.</p>
+        <img src="Images/character_more_detail_4.png" alt="Close up detail">
+        <p>Lower legs of character.</p>
+        <img src="Images/character_more_detail_5.png" alt="Close up detail">
+        <p>Wheel feet.</p>
+      </div>
+    </div>
+
+    <!-- Colour Section -->
+    <div class="process-step toggler">
+      <h2>Colour</h2>
+      <p>Click to see more.</p>
+      <img src="Images/character_color_1.png" alt="Character with color scheme 1">
+      <p>Colored model with details.</p>
+      <!-- Expandable content showing alternative color schemes -->
+      <div class="toggle-content">
+        <img src="Images/character_color_2.png" alt="Character with color scheme 2">
+        <p>Colored model with details from the back.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- JavaScript Section -->
+  <!-- External JavaScript for navbar functionality -->
+  <script src="../navbar.js"></script>
+  <!-- Internal JavaScript for toggle functionality -->
+  <script>
+    // Wait for DOM to be fully loaded before adding event listeners
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all elements with the 'toggler' class
+      const togglers = document.querySelectorAll('.toggler');
+      
+      // Add click event listener to each toggleable section
+      togglers.forEach(function(toggler) {
+        toggler.addEventListener('click', function() {
+          // Toggle the 'active' class to show/hide content
+          this.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
