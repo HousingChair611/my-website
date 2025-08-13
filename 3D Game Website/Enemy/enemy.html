@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta tags for proper character encoding and responsive viewport -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Enemy Model Progress</title>
+  <!-- External CSS file for main styling -->
   <link rel="stylesheet" href="../style.css">
-  <link rel="icon" href="C:\Users\a.m.findlay\OneDrive - Saint Kentigern\Desktop\Digital Technology\Year 11\Assessments\92005 assessment - Andrew Findlay\3D Game Website\Images\logo+color.png">
-  <!-- Internal CSS -->
+  <!-- Favicon for browser tab -->
+  <link rel="icon" href="../Images/logo+color.png">
+  <!-- Internal CSS - Styles for expandable content sections -->
   <style>
+    /* Clickable container - Expands to show more content */
     .toggler { 
       cursor: pointer; 
       transition: all 0.3s ease;
     }
+    /* Hover effect for toggleable sections */
     .toggler:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 32px #00e6d0aa;
     }
+    /* Hidden content container - Revealed when toggler is clicked */
     .toggle-content { 
       display: none; 
       margin-top: 15px;
       padding-top: 15px;
       border-top: 1px solid #0f7cff33;
     }
+    /* Show toggle content when parent has active class */
     .toggler.active .toggle-content {
       display: block;
     }
   </style>
 </head>
-<body>
 
-  <!-- Navbar -->
+<body>
+  <!-- Navigation Section -->
+  <!-- Hamburger menu button for mobile navigation -->
   <button id="openNavbarBtn" class="open-navbar-btn">☰</button>
+  <!-- Side navigation bar -->
   <nav id="navbar" class="navbar">
     <ul>
       <li><a href="../index.html">Home</a></li>
@@ -39,51 +48,68 @@
     </ul>
   </nav>
 
-  <!-- Header -->
+  <!-- Page Header Section -->
   <header class="site-header">
     <h1 id="title">Enemy Design Process</h1>
   </header>
 
-  <!-- Main -->
+  <!-- Main Content Section -->
   <main id="work_process" class="flex-container wrap">
+    <!-- Initial Concept Section -->
     <div class="process-step toggler">
       <h2>Initial Concept</h2>
       <p>Click to see more.</p>
-      <img src="C:\Users\a.m.findlay\OneDrive - Saint Kentigern\Desktop\Digital Technology\Year 11\Assessments\92005 assessment - Andrew Findlay\3D Game Website\Enemy\Images\enemy_initial_1.jpg" alt="Drawn concept for the enemy">
+      <img src="Images/enemy_initial_1.jpg" alt="Drawn concept for the enemy">
       <p>Rough sketch by Lucas, outlining shape and silhouette.</p>
+      <!-- Expandable content showing additional initial concepts -->
       <div class="toggle-content">
-        <img src="C:\Users\a.m.findlay\OneDrive - Saint Kentigern\Desktop\Digital Technology\Year 11\Assessments\92005 assessment - Andrew Findlay\3D Game Website\Enemy\Images\enemy_initial_2.jpg" alt="Initial low‑poly model">
+        <img src="Images/enemy_initial_2.jpg" alt="Initial low‑poly model">
         <p>First simple 3D model to allow for easy adjustments in the future.</p>
       </div>
     </div>
 
+    <!-- Refined Concept Section -->
     <div class="process-step toggler">
       <h2>Refined Concept</h2>
-      <img src="C:\Users\a.m.findlay\OneDrive - Saint Kentigern\Desktop\Digital Technology\Year 11\Assessments\92005 assessment - Andrew Findlay\3D Game Website\Enemy\Images\enemy_concept_1.jpg" alt="Blender sculpt with vines">
+      <img src="Images/enemy_concept_1.jpg" alt="Blender sculpt with vines">
       <p>Added basic vine details and wear patterns.</p>
     </div>
 
+    <!-- More Detail Section -->
     <div class="process-step toggler">
       <h2>More Detail</h2>
-      <img src="C:\Users\a.m.findlay\OneDrive - Saint Kentigern\Desktop\Digital Technology\Year 11\Assessments\92005 assessment - Andrew Findlay\3D Game Website\Enemy\Images\enemy_colour_1.png" alt="Textured model preview">
-      <p>Base colours, highlights, and texture maps applied with particles used to add leaves for more detail.</p>
+      <img src="Images/enemy_detail.png" alt="Detailed model">
+      <p>Particles used to add leaves for more detail as well as improving the vines themselves.</p>
     </div>
 
+    <!-- Colour Section -->
     <div class="process-step toggler">
-      <h2>Animation</h2>
-      <img src="#" alt="Idle animation preview">
-      <p>Idle, walk, attack cycles in progress.</p>
+      <h2>Colour</h2>
+      <p>Click to see more.</p>
+      <img src="Images/enemy_colour_1.png" alt="Textured model">
+      <p>Colours, highlights, and texture maps applied to model.</p>
+      <!-- Expandable content showing alternative color schemes -->
+      <div class="toggle-content">
+        <img src="Images/enemy_colour_2.png" alt="Alternative coloured model">
+        <p>Alternative colour scheme for the enemy model with a background.</p>
+      </div>
     </div>
   </main>
 
-  <!-- Internal JS -->
+  <!-- JavaScript Section -->
+  <!-- External JavaScript for navbar functionality -->
   <script src="../navbar.js"></script>
+  <!-- Internal JavaScript for toggle functionality -->
   <script>
+    // Wait for DOM to be fully loaded before adding event listeners
     document.addEventListener('DOMContentLoaded', function() {
+      // Get all elements with the 'toggler' class
       const togglers = document.querySelectorAll('.toggler');
       
+      // Add click event listener to each toggleable section
       togglers.forEach(function(toggler) {
         toggler.addEventListener('click', function() {
+          // Toggle the 'active' class to show/hide content
           this.classList.toggle('active');
         });
       });

@@ -1,21 +1,24 @@
-/* Reset & box‑sizing */
+/* ===== GLOBAL STYLES ===== */
+/* Reset & box‑sizing to ensures consistent spacing and sizing across browsers */
 * {
   margin: 0;
   padding: 15px;
   box-sizing: border-box;
 }
 
-/* Body */
+/* ===== BODY STYLES ===== */
+/* Main body styling with gradient background and typography */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #1a2233 0%, #232946 100%);
   color: #eaf6fb;
   line-height: 1.6;
-  padding-top: 60px;
+  padding-top: 60px; /* Space for fixed navbar */
   min-height: 100vh;
 }
 
-/* Navbar */
+/* ===== NAVIGATION STYLES ===== */
+/* Hamburger menu button for opening the sidebar */
 .open-navbar-btn {
   position: fixed;
   top: 50%;
@@ -27,11 +30,13 @@ body {
   padding: 10px;
   cursor: pointer;
   font-size: 1.2rem;
-  z-index: 1001;
+  z-index: 1001; /* Higher than navbar */
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   transition: left 0.3s, 0.2s, box-shadow 0.2s;
 }
+
+/* Hover effect for hamburger button */
 .open-navbar-btn:hover {
   background: linear-gradient(90deg, #00e6d0 0%, #0f7cff 100%);
   box-shadow: 0 4px 16px #00e6d0aa;
@@ -43,24 +48,37 @@ body {
   left: 260px;
 }
 
+/* Side navigation bar styling */
 .navbar {
   position: fixed;
-  top: 0; left: -260px;
-  width: 260px; height: 100%;
+  top: 0; 
+  left: -260px; /* Hidden by default */
+  width: 260px; 
+  height: 100%;
   background: #181f2a;
   color: #fff;
   padding: 40px 20px;
-  transition: left 0.3s;
+  transition: left 0.3s; /* Smooth slide animation */
   z-index: 1000;
   box-shadow: 2px 0 16px #0f7cff33;
 }
 
-.navbar.active { left: 0; }
+/* Show navbar when active class is applied */
+.navbar.active { 
+  left: 0; 
+}
 
-.navbar ul { list-style: none; }
+/* Remove default list styling */
+.navbar ul { 
+  list-style: none; 
+}
 
-.navbar li { margin: 20px 0; }
+/* Spacing between navigation items */
+.navbar li { 
+  margin: 20px 0; 
+}
 
+/* Navigation link styling */
 .navbar a {
   color: #eaf6fb;
   text-decoration: none;
@@ -70,6 +88,7 @@ body {
   transition: 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
+/* Hover effect for navigation links */
 .navbar a:hover {
   background: #0f7cff;
   color: #fff;
@@ -77,7 +96,8 @@ body {
   text-decoration: none;
 }
 
-/* HEADER */
+/* ===== HEADER STYLES ===== */
+/* Site header with gradient background */
 .site-header {
   text-align: center;
   padding: 32px 20px 20px 20px;
@@ -86,6 +106,7 @@ body {
   box-shadow: 0 2px 16px #0f7cff22;
 }
 
+/* Main title styling */
 .site-header h1 {
   font-size: 2.2rem;
   margin-bottom: 10px;
@@ -93,6 +114,7 @@ body {
   text-shadow: 0 2px 8px #0f7cff55;
 }
 
+/* Hero image styling */
 .hero-image {
   max-width: 100%;
   height: auto;
@@ -102,17 +124,19 @@ body {
   box-shadow: 0 4px 24px #0f7cff33;
 }
 
-/* FLEX CONTAINERS */
+/* ===== LAYOUT STYLES ===== */
+/* Flexbox container for main content layout */
 .flex-container {
   display: flex;
   gap: 24px;
   padding: 32px 20px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
   justify-content: center;
 }
 
+/* Individual flex items (sections) */
 .flex-item {
-  flex: 1 1 320px;
+  flex: 1 1 320px; /* Grow, shrink, and base width */
   background: linear-gradient(135deg, #232946 60%, #1a2233 100%);
   padding: 24px;
   border-radius: 14px;
@@ -121,11 +145,14 @@ body {
   border: 1.5px solid #0f7cff33;
   transition: box-shadow 0.2s, border 0.2s;
 }
+
+/* Hover effect for flex items */
 .flex-item:hover {
   box-shadow: 0 8px 32px #00e6d0aa;
   border: 1.5px solid #00e6d0;
 }
 
+/* Process step cards for model progression pages */
 .process-step {
   flex: 1 1 280px;
   background: linear-gradient(135deg, #232946 60%, #1a2233 100%);
@@ -137,11 +164,14 @@ body {
   box-shadow: 0 2px 12px #0f7cff22;
   transition: box-shadow 0.2s, border 0.2s;
 }
+
+/* Hover effect for process steps */
 .process-step:hover {
   box-shadow: 0 8px 32px #00e6d0aa;
   border: 2px solid #00e6d0;
 }
 
+/* Image styling within process steps */
 .process-step img {
   width: 100%;
   height: auto;
@@ -150,22 +180,28 @@ body {
   box-shadow: 0 2px 12px #0f7cff33;
 }
 
-/* Hover effects */
+/* ===== INTERACTIVE EFFECTS ===== */
+/* Hover effects for images */
 img:hover {
   transform: translateY(-5px) scale(1.03);
   box-shadow: 0 4px 24px #00e6d0cc;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Miscellaneous */
+/* ===== TYPOGRAPHY STYLES ===== */
+/* Heading styles with accent color */
 h2, h3, h4 {
   color: #00e6d0;
   text-shadow: 0 1px 4px #0f7cff44;
 }
+
+/* Link styling */
 a {
   color: #0f7cff;
   transition: color 0.2s;
 }
+
+/* Hover effect for links */
 a:hover {
   color: #00e6d0;
 }
